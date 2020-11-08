@@ -117,8 +117,13 @@
               "devServerTarget": "fitness-tracker:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "fitness-tracker"
 }
