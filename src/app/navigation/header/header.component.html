@@ -4,13 +4,13 @@
     <mat-icon>menu</mat-icon>
   </button>
 </div>
-<div><a routerLink="/">LOGO</a></div>
+<div><a routerLink="/">NG Fitness</a></div>
 <div fxFlex fxLayout fxHide.xs fxLayoutAlign="flex-end">
   <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-    <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
-    <li *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
-    <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>
-    <li *ngIf="isAuth">
+    <li *ngIf="!(isAuth$ | async)"><a routerLink="/signup">Signup</a></li>
+    <li *ngIf="!(isAuth$ | async)"><a routerLink="/login">Login</a></li>
+    <li *ngIf="isAuth$ | async"><a routerLink="/training">Training</a></li>
+    <li *ngIf="isAuth$ | async">
       <a style="cursor: pointer" (click)="onLogout()">Logout</a>
     </li>
   </ul>
